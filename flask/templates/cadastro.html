@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ArterAçãoConnect - Cadastro</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="shortcut icon" href="images/coletivo.png">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <center>
+        <h1><a href="index.html" class="branco">ArterAçãoConnect - Cadastro de Usuário</a></h1><br>
+      </center>
+      <nav>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle"/>
+        <label for="menu-toggle" id="responsive-button">
+          <img src="images/icone transparente.png" width="20px" height="20px" alt="Menu">
+        </label>
+        <ul class="menu">
+          <li><a href="index.html">HOME</a></li> |
+          <li><a href="noticia1.html">NOTÍCIAS</a></li> |
+          <li><a href="evento1.html">EVENTOS</a></li> |
+          <li><a href="index.html">CONTATO E APOIO</a></li> |
+          <li><a href="#">CADASTRE-SE</a></li> |
+          <li><a href="adm.html">ADMINISTRAÇÃO</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!--<form action='/teste' method="post">
+    <label>E-mail <input type="text" name="emailEntrada"/><label>
+      <button type="submit">enviar</button>
+  </form>-->
+  <section id="register" class="section-padding">
+    <div class="container">
+      <h2>Cadastre-se</h2>
+      <p>Todos os campos marcados com * são obrigatórios.<br>Por favor, preencher a área do Responsável, apenas se Menor de Idade.<br>Ao se cadastrar, você facilita a comunicação direta do Coletivo com você para notificações sobre eventos e notícias futuras.</p>
+      <form id="registerform" action="/cadastro" method="post">
+        <div class="form-group">
+          <label for="register-name">Nome*</label><br>
+           <input type="text" id="register-name" name="registerName" >  <!--  required> -->
+        </div>
+        <div class="form-group">
+          <label for="register-email">Email*</label><br>
+          <input type="email" id="register-email" placeholder="exemplo@exemplo.com" name="registerEmail" > <!--required-->
+        </div>
+        <div class="form-group">
+          <label for="register-cpf">CPF*</label><br>
+          <input type="text" id="register-cpf" placeholder="XXX.XXX.XXX-XX" name="registerCpf"  pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="O CPF deve estar no formato XXX.XXX.XXX-XX"> <!--required-->
+        </div>
+        <div class="form-group">
+          <label for="register-tell">Telefone*</label><br>
+          <input type="text" id="register-tell" placeholder="(XX)XXXXX-XXXX" name="registerTell"  pattern="\(\d{2}\)\d{5}-\d{4}" title="O telefone deve estar no formato (XX)XXXXX-XXXX"> <!--required-->
+        </div>
+        <div class="form-group">
+          <label for="register-gender">Sexo*</label><br>
+          <select id="register-gender" name="registerGender">
+            <option value="Outro">Outro</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Feminino">Feminino</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Idade*</label><br>
+          <label><input class='input-radio' type='radio' name='idade' value="Menor" />Menor de 18 anos.</label><br>
+          <label><input class='input-radio' type='radio' name='idade' value="Maior" />Maior de 18 anos.</label>
+        </div>
+        <div class="form-group">
+          <label for="register-name-resp">Nome de Responsável - *Se menor de idade</label><br>
+          <input type="text" id="register-name-resp" name="registerNameResp">
+        </div>
+        <div class="form-group">
+          <label for="register-email-resp">Email do Responsável - *Se menor de idade</label><br>
+          <input type="email" id="register-email-resp" placeholder="exemplo@exemplo.com" name="registerEmailResp">
+        </div>
+        <div class="form-group">
+          <label for="register-cpf-resp">CPF do Responsável - *Se menor de idade</label><br>
+          <input type="text" id="register-cpf-resp" placeholder="XXX.XXX.XXX-XX" name="registerCpfResp" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="O CPF deve estar no formato XXX.XXX.XXX-XX">
+        </div>
+        <div class="form-group">
+          <label for="register-tell-resp">Telefone do Responsável - *Se menor de idade</label><br>
+          <input type="text" id="register-tell-resp" placeholder="(XX)XXXXX-XXXX" name="registerTellResp" pattern="\(\d{2}\)\d{5}-\d{4}" title="O telefone deve estar no formato (XX)XXXXX-XXXX">
+        </div>
+        <div class="form-group">
+          <label for="register-gender-resp">Sexo do Responsável - *Se menor de idade</label><br>
+          <select id="register-gender-resp" name="registerGenderResp">
+            <option value="Outro">Outro</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Feminino">Feminino</option>
+          </select>
+        </div>
+        <button type="submit" class="btn">Cadastrar</button>
+      </form>
+    </div>
+  </section>
+  <footer>
+    <a href="#"><button class="button" style="vertical-align:middle"><span><strong>Topo da Página</strong></span></button></a>
+    <a href="https://www.instagram.com/coletivo_arteracao?igsh=cGw5bXR1ZTIzeTU4" target="_blank"><button class="button" style="vertical-align:middle"><span><strong>Visite o Instagram</strong></span></button></a>
+    <a href="https://www.youtube.com/@coletivoarteracao3961/featured" target="_blank"><button class="button" style="vertical-align:middle"><span><strong>Visite o Youtube</strong></span></button></a>
+    <a href="cadastro.html"><button class="button" style="vertical-align:middle"><span><strong>Se Cadastre</strong></span></button></a>
+    <div class="container">
+      <p>&copy; 2024 Coletivo ArterAção. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+  <!-- <script src="script.js"></script> -->
+  <!-- <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const minorRadio = document.querySelector('input[name="idade"][value="Menor"]');
+      const adultRadio = document.querySelector('input[name="idade"][value="Maior"]');
+      const respFields = document.querySelectorAll('#register-name-resp, #register-email-resp, #register-cpf-resp, #register-tell-resp, #register-gender-resp');
+
+      function toggleRespFields() {
+        const isMinor = minorRadio.checked;
+        respFields.forEach(field => {
+          field.required = isMinor;
+          field.closest('.form-group').style.display = isMinor ? 'block' : 'none';
+        });
+      }
+
+      minorRadio.addEventListener('change', toggleRespFields);
+      adultRadio.addEventListener('change', toggleRespFields);
+
+      // Initialize visibility on page load
+      toggleRespFields();
+    });
+  </script> -->
+</body>
+</html>

@@ -1,0 +1,538 @@
+/* HERO SECTION */
+.bg-1 {
+    background-image: url(/flask/static/images/coletivooo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+  }
+  
+  #remocao{
+    position: absolute;
+    top: 16.5%;
+    left: 65%;
+  }
+  
+  .bg-2 {
+    background-image: url(/flask/static/images/campofutebol.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .hero-section {
+    background-size: cover;
+    height: calc(100vh - 150px);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+  }
+  
+  .hero-section h1 {
+    color: white;
+    font-size: 50px;
+    line-height: 90%;
+  
+  }
+  
+  .hero-section p {
+    color: white;
+    font-size: 20px;
+    line-height: 90%;
+  
+  }
+  
+  .bx-wrapper {
+    border: none;
+    box-shadow: none;
+  }
+  
+  .bx-pager-item .active {
+    background-color: purple !important;
+  }
+  
+  .bx-wrapper .bx-pager {
+    bottom: 10px;
+  
+  }
+  
+  .bg-1 .btn {
+    bottom: 10px;
+  }
+  
+  /* FIM HERO SECTION */
+  
+  
+  /* BAITOLICES */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: lightgray;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 5px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: purple;
+    border-radius: 5px;
+  }
+  
+  ::-webkit-scrollbar-thumb:active {
+    background: rebeccapurple;
+  }
+  
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  /* BAITOLICES */
+  body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: whitesmoke;
+  }
+  
+  h2 {
+    font-size: 30px;
+  }
+  
+  .branco {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    user-select: none;
+  }
+    
+  #contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .contato,.apoio{
+    width: 45vw;
+  }
+  @media screen and (max-width: 1000px) {
+    .contato,.apoio{
+      width: 100vh;
+    }
+  }
+  
+  header {
+    background-image: linear-gradient(to right, #293fae, #8e44ad 50%, #bb11af); 
+    color: white;
+    padding: 20px;
+  }
+  
+  header h1 {
+    margin: 0;
+    text-align: center;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0 0 0;
+    
+  }
+  
+  nav ul li {
+    margin: 0 15px;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  nav a {
+    text-decoration: none;
+    margin: 0 20px;
+    position: relative;
+  }
+  
+  nav a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    transition: width 0.3s;
+  }
+  
+  nav a:hover::after {
+    width: 100%;
+  }
+  
+  /* Responsividade */
+  .menu-toggle {
+    display: none;
+  }
+  
+  #responsive-button {
+    display: none;
+  }
+  
+  @media (max-width: 1000px) {
+    #responsive-button {
+      display: block;
+      cursor: pointer;
+    }
+  
+    .menu-toggle:checked + #responsive-button + .menu{
+      display: flex;
+      flex-direction: column;
+    }
+  
+    nav ul li {
+      margin: 10px 0;
+    }
+  
+    nav ul {
+      display: none;
+    }
+  }
+  
+  .section-padding {
+    padding: 25px;
+  }
+  
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .card {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 35%;
+    margin-bottom: 20px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .card h3 {
+    margin: 0 0 10px 0;
+  }
+  
+  .card .btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: purple;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: transform 0.3s;
+  }
+  
+  .card .btn:hover {
+    background-color: rebeccapurple;
+    /* transform: scale(1.2); */
+  }
+  
+  footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    margin-bottom: 5px;
+  }
+  
+  .form-group label,
+  .form-group select {
+    display: inline-block;
+  }
+  
+  .form-group .input-radio {
+    width: auto;
+    margin: 10px;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: 10px;
+    width: 50%;
+    max-width: 80vw;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    white-space: nowrap;
+    background-color: purple;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 51.5%;
+    transition: transform 0.3s;
+  }
+  
+  .btn2{
+    text-align: center;
+    margin: 10px;
+    margin-right: 10%;
+    padding: 10px;
+    white-space: nowrap;
+    background-color: purple;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: rebeccapurple;
+  }
+  
+  * .button {
+    border-radius: 4px;
+    background-color: purple;
+    color: white;
+    padding: 10px 20px;
+    width: 200px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    margin: 10px 20px 5px 20px;
+    transition: transform 0.5s;
+  }
+  
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    color:white;
+  }
+  
+  .button:hover {
+    
+    background-color: rebeccapurple;
+    transform: scale(1.1); 
+  }
+  
+  .button:active {
+    color: rebeccapurple;
+    background: mediumpurple;
+  }
+  
+  .button:visited {
+    color: purple;
+    background: rebeccapurple;
+  }
+  
+  /* gb loucuras */
+  
+  .sobre {
+    margin-top: 40px;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .ericksoares img {
+    width: 100%;
+    min-width: 360px;
+    max-width: 558px;
+  }
+  
+  .ericksoares {
+    font-size: 12px;
+    color: gray;
+  }
+  
+  .sobre p {
+    margin-left: 50px;
+    font-size: 17px;
+  }
+  
+  .sobre h2 {
+    margin-left: 50px;
+  }
+  
+  @media screen and (max-width: 1000px) {
+      .container {
+        width: 90%;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .sobre p, .sobre h2 {
+        margin-left: 0px;
+        
+      }
+  
+  }
+  
+  .rightdiv {
+    display: flex;
+    justify-content: end;
+  }
+  
+  .jogarmeio {
+    display: inline-block;
+    width: 57%;
+    height: 20px;
+  }
+  
+  .jogaresquerda {
+    float: left;
+    width: 30%;
+    height: 20px;
+  }
+  
+  .obracomnada {
+    background-color: black;
+  }
+  
+  .eventocomnada {
+    background-color: black;
+  }
+  
+  .field {
+    background-color: #e6e6e6;
+    border-radius: 2%;
+    width: 70%;
+    margin: 2% 0px 2% 0px;
+  }
+  
+  .filtro {
+    background-color: #e6e6e6;
+    width: 25%;
+    margin: 2% 0% 2% 0px;
+    height: 30px;
+    display: inline-block;
+  }
+  
+  .lupemos {
+    float: right;
+  }
+  
+  .search {
+    float: left;
+    background-color: #e6e6e6;
+    color: gray;
+    padding: 1.2% 0px 0px 3.4;
+    width: 85%;
+    height: 88%;
+    border: none;
+  }
+  
+  .reduz {
+    width: 20%;
+  }
+  
+  .card2 {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 170px;
+    margin-bottom: 20px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 1.2% 1.2% 1.2% 1.2%;
+  }
+  
+  .card2 .btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: purple;
+    color: white;
+    white-space: nowrap;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: transform 0.3s;
+  }
+  
+  .card2 .btn:hover {
+    background-color: rebeccapurple;
+  }
+  
+  .evento1 {
+    float: left;
+  }
+  
+  .evento2 {
+    float: left;
+  }
+  
+  .evento3 {
+    float: left;
+  }
+  
+  .evento4 {
+    float: left;
+  }
+  
+  .obra1 {
+    float: left;
+  }
+  
+  .obra2 {
+    float: left;
+  }
+  
+  .obra3 {
+    float: left;
+  }
+  
+  .obra4 {
+    float: left;
+  }
+  
+  .cards2 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  /* controle de dados e cadastro */
+  
+  #register-name{
+    width: 50%;
+  }
+  #register-email{
+    width: 50%;
+  }
+  #register-cpf{
+    width: 50%;
+  }
+  #register-tell{
+    width: 50%;
+  }

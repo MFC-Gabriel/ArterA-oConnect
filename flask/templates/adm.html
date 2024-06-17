@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ArterAçãoConnect - ADM</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="shortcut icon" href="/flask/static/images/coletivo.png">
+</head>
+
+
+
+<!-- https://www.navedoconhecimento.rio  NOSSA REFERÊNCIA -->
+
+
+
+<body>
+  <header>
+    <div class="container">
+      <center>
+        <h1><a href="index.html" class="branco">ArterAçãoConnect - Admnistração</a></h1><br>
+      </center>
+      <nav>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle"/>
+        <label for="menu-toggle" id="responsive-button">
+            <img src="/flask/static/images/icone transparente.png" width="20px" height="20px" alt="Menu">
+        </label>
+        <ul  class="menu">
+          <li><a href="index.html">HOME</a></li> |
+          <li><a href="noticia1.html#news">NOTÍCIAS</a></li> |
+          <li><a href="evento1.html#events">EVENTOS</a></li> |
+          <li><a href="index.html#contact">CONTATO E APOIO</a></li> |
+          <li><a href="cadastro.html">CADASTRE-SE</a></li> |
+          <li><a href="#">ADMINISTRAÇÃO</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <section id="admin" class="section-padding">
+    <div class="container">
+      <h2>Administração</h2>
+      <p>Esse setor é reservado para os Diretores e Presidentes do Coletivo.</p>
+      <form id="admin-login-form">
+        <div class="form-group">
+          <label for="admin-login">Login</label><br> 
+          <input type="text" id="admin-login" name="admin-login" required>
+        </div>
+        <div class="form-group">
+          <label for="admin-password">Senha</label><br>
+          <input type="password" id="admin-password" name="admin-password" required>
+        </div>
+        <button type="submit" class="btn">Login</button>
+      </form>
+    </div>
+  </section>
+  <footer>
+    <a href="#"><button class="button" style="vertical-align:middle"><span><strong>Topo da
+            Página</strong></span></button></a>
+    <a
+      href="https://www.instagram.com/coletivo_arteracao?igsh=cGw5bXR1ZTIzeTU4" target="_blank"><button class="button" style="vertical-align:middle"><span><strong>Visite o
+            Instagram</strong></span></button></a>
+    <a href="https://www.youtube.com/@coletivoarteracao3961/featured" target="_blank"><button class="button" style="vertical-align:middle"><span><strong>Visite o
+            Youtube</strong></span></button></a>
+    <a href="cadastro.html"><button class="button" style="vertical-align:middle"><span><strong>Se
+            Cadastre</strong></span></button></a>
+    <div class="container">
+      <p>&copy; 2024 Coletivo ArterAção. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+  <script src="scriptADM.js"></script>
+  <script>
+    //Login ADM -------------------------
+  document.getElementById('admin-login-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const login = document.getElementById('admin-login').value;
+  const password = document.getElementById('admin-password').value;
+
+  // Verifique as credenciais adm e senha12
+  const correctLogin = 'adm';
+  const correctPassword = 'senha123';
+
+  if (login === correctLogin && password === correctPassword) {
+
+    window.location.href = 'controlebanco.html';
+  } else {
+
+    alert('Login ou senha incorretos. Tente novamente.');
+  }  
+  });
+  </script>
+</body>
+
+</html>

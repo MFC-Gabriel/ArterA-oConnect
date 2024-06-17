@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ArterAçãoConnect</title>
+
+  <!-- pra mandar o E-mail -->
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function () {
+      emailjs.init("evzMf4r2BDwzicO");
+    })();
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- EMAIL -->
+
+
+  <!-- slider -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+
+  <script>
+    $(document).ready(function () {
+
+      $(".slider").bxSlider({
+
+        auto: true,
+        pause: 5000,
+        controls: false,
+        speed: 2000,
+        mode: 'horizontal',
+        infiniteLoop: true
+
+      });
+
+    });
+  </script>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+  <!-- slider -->
+  <link rel="shortcut icon" href="/flask/static/images/coletivo.png">
+</head>
+
+
+
+<!-- https://www.navedoconhecimento.rio  NOSSA REFERÊNCIA -->
+
+
+
+<body>
+  <header>
+    <div class="container">
+      <center>
+        <h1><a href="index.html" class="branco">ArterAçãoConnect</a></h1><br>
+      </div>
+      </center>
+      <nav>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle"/>
+        <label for="menu-toggle" id="responsive-button">
+            <img src="{{ url_for('static', filename='images/icone transparente.png') }}" width="20px" height="20px" alt="Menu">
+        </label>
+        <ul class="menu">
+          <li><a href="{{ url_for('index.html') }}">HOME</a></li> |
+          <li><a href="#news">NOTÍCIAS</a></li> |
+          <li><a href="#events">EVENTOS</a></li> |
+          <li><a href="#contact">CONTATO E APOIO</a></li> |
+          <li><a href="{{ url_for('cadastro.html') }}">CADASTRE-SE</a></li> |
+          <li><a href="{{ url_for('adm.html') }}">ADMINISTRAÇÃO</a></li>
+        </ul>
+      </nav>    
+  </header>
+  <div class="slider">
+    <section class="hero-section bg-1">
+
+      <div class="container">
+        <h1>O Coletivo Sociocultural mais apaixonante do Brasil!</h1>
+        <p>Venha conhecer um pouco mais do nosso Coletivo e descubra como podemos impulsionar a Cultura, Educação e
+          Saúde ao máximo na Periferia.
+          Adentre no mundo da Ação Social, projetado para quem busca resultados de contribuição reais. Nossos diretores
+          vão te guiar em uma jornada de força, determinação e conhecimento. Não perca tempo, entre em contato conosco e
+          embarque nessa jornada de evolução pessoal!</p><br>
+        <a href="https://linktr.ee/Coletivo_arteracao#317650658" class="btn" target="_blank">Conheça
+          Nosso Coletivo!</a>
+      </div>
+
+    </section>
+
+    <section class="hero-section bg-2">
+
+      <div class="container">
+        <h1>Se Cadastre para Receber Notícias de Futuros Eventos!<br>Ta esperando o que?</h1>
+        <p>Esteja sempre informado sobre nossas ações e eventos voltados para impulsionar a Educação, Saúde e Cultura na periferia. Ao se cadastrar, você receberá atualizações em primeira mão sobre nossas atividades, oficinas, palestras, e muito mais. Nossos diretores te guiarão em uma jornada de força, determinação e superação. Não perca a chance de participar de atividades transformadoras e que fazem a diferença na comunidade.</p><br>
+        <a href="cadastro.html" class="btn" target="_blank">Se Cadastre Aqui!</a>
+      </div>
+
+    </section>
+  </div>
+  <!--<section id="home">
+    <center>
+     <div class="carousel">
+        <img src="images/grupoarteracao.png" alt="Imagem 1">
+        <img src="images/coletivo.png" alt="Imagem 2">
+        <img src="images/coletivo.png" alt="Imagem 3">
+      </div>
+     </center> 
+  </section>-->
+  <!-- Outras seções continuam como estão -->
+  <section class="container sobre" id="about">
+    <div class="ericksoares">
+      <img src="/flask/static/images/erick soares.png" alt="erick soares"><br>&copy;UNICEF Brasil - Erick Soares foi nomeado jovem
+      ativista do UNICEF pelo representante<br> do UNICEF no Brasil, Youssouf Abdel-Jelil, no dia 20 de novembro de
+      2023, em cerimônia<br> no escritório do UNICEF em Brasília.<br><img src="/flask/static/images/erick.jpg" width="25%" alt="erick"><br>✊🏽 Periferia ativa
+    </div>
+    <div class="container">
+      <h2>SOBRE O COLETIVO</h2>
+      <p>O Coletivo Arteração é formado por artistas independentes de escola pública e da periferia, de 14 a 29 anos,
+        para traçar caminhos rumo à democratização do acesso à cultura, à educação, à saúde, ao lazer e à segurança. O
+        grupo foi contemplado na iniciativa Chama na Solução em 2023 com o projeto "SustentArte: Simples, Direto e
+        Impactante", que promoveu oficinas de audiovisual como ferramenta política: Racismo Ambiental e Mudanças
+        climáticas. O Chama na Solução 2023 é uma realização do UNICEF em parceria técnica com o Cedaps e o Instituto
+        Precisa Ser.</p>
+
+      <p>“Quando a gente trata de questões de favela, de periferia, o Coletivo é formado por pessoas de
+        representatividade pra esses espaços, pois, quando a gente começa a ascender, as pessoas veem gente como a
+        gente, do nosso estilo, da nossa cor, fala como eu, anda como eu, faz o que eu faço, e está lá. Então, eu também
+        consigo, isso inspira outros jovens”, diz Erick, que acredita no poder da coletividade para transpor barreiras.
+      </p>
+
+      <p>Em três anos o Coletivo já alcançou, aproximadamente, mais de 500 jovens, 13 escolas públicas da Zona Norte do
+        Rio, com oficinas artísticas-educacionais, apresentações de multilinguagens e ações sociais em comunidades,
+        favelas, periferias, escolas e praças públicas.</p>
+
+      <p>“O coletivo Arteração é o super-herói que eu queria ter tido na infância, mas não tive por falta de
+        representatividade. É a base que meu pai queria ter, mas não teve, é um espaço de acolhimento, de pertencimento
+        e união, fazendo com que os jovens se sintam pertencentes às suas culturas ditas muitas das vezes como
+        marginais”, relata o jovem.</p>
+      <p>Para Erick, a educação tem o poder de transformar vidas. “A educação me pariu. Quando a educação pega um jovem
+        que tem tudo pra dar errado e aposta nele, ele começa a dar certo. E eu, como um ativista do UNICEF, quero
+        mostrar para os meus, para minha gente, para o meu povo, o povo de favela, do gueto, dos centros urbanos, que a
+        gente consegue, que a gente é capaz”, diz.</p>
+
+      <p>“O meu sonho é poder um dia alcançar o maior número de jovens, crianças e adolescentes possível, porque eu
+        acredito que há muitos jovens que ainda precisam ser acessados, há muitas narrativas que ainda precisam ser
+        ouvidas, que muitas vezes são negligenciadas e silenciadas. Se eu pudesse dizer alguma coisa para o Erick tempos
+        atrás, seria para ele não desistir, que a gente conseguiu, que tudo valeu a pena e que finalmente ele faz parte
+        de algo”, finaliza Erick.</p>
+    </div>
+  </section>
+  <section id="news" class="section-padding">
+    <div class="container">
+      <h2>NOTÍCIAS</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Grande Sertão🎥</h3>
+          <p>No dia 05/06 fomos convidados pela @monicanegaoficial para assistir a pré-estreia do filme “Grande Sertão”,
+            Venha ver como foi assistir este filme espetacular!!🎥🍿</p>
+          <a href="noticia1.html" class="btn">Leia Mais</a>
+        </div>
+        <div class="card">
+          <h3>CapacitArte🎨</h3>
+          <p>No dia 08/06 inauguramos o projeto CapacitArte, onde podemos nos conhecer, conhecer as vivências de cada
+            um.. Foi um dia lindo de emoções, trocas, alegria… 🎨👏🏼</p>
+          <a href="noticia2.html" class="btn">Leia Mais</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="events" class="section-padding">
+    <div class="container">
+      <h2>EVENTOS EM DESTAQUE</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Oficina de Teatro, Dança e Fotografia🎭</h3>
+          <p>Estão abertas as inscrições das aulas de teatro, dança e fotografia gratuitas para crianças, adolescentes e
+            jovens (jovens de todas as idades 😎).🎭</p>
+          <a href="evento1.html" class="btn">Saiba Mais</a>
+        </div>
+        <div class="card">
+          <h3>Coletivo ArterAção na WebsummitRio📲</h3>
+          <p>Erick Soares esteve no painel como speaker do 💙@websummitrio na mesa da @unicefbrasil💙 tratando de
+            discussões acerca das emergências climáticas.🚀</p>
+          <a href="evento2.html" class="btn">Saiba Mais</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="rightdiv">
+  <a href="vereventos.html" class="btn2">Ver Eventos</a>
+  </div>    
+  <!-- <section id="library" class="section-padding">
+    <div class="container">
+      <h2>Biblioteca de Obras</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Coletivo ArterAção na WebsummitRio📲</h3>
+          <p>Erick Soares esteve no painel como speaker do 💙@websummitrio na mesa da @unicefbrasil💙 tratando de
+            discussões acerca das emergências climáticas.🚀</p>
+          <a href="obra2.html" class="btn">Saiba Mais</a>
+        </div>
+        <div class="card">
+          <h3>(Obra publicada nº1)📲</h3>
+          <p>Descrição da Obra nº1</p>
+          <a href="obra1.html" class="btn">Saiba Mais</a>
+        </div>
+      </div>
+      <div class="jogardireita" style="width: 110px;">
+        <a href="verobras.html" class="btn">Ver Obras</a>
+      </div>
+    </div>
+  </section> -->
+
+
+  
+    <section id="contact">
+      <div class="contato">
+        <h2>
+          CONTATE-NOS EM CASO DE PROBLEMAS
+        </h2>
+        <form id="contact-form">
+          <div class="form-group">
+            <label for="name">Nome:</label><br>
+            <input type="text" id="name" name="nome" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="assunto">Assunto:</label><br>
+            <input type="text" id="assunto" name="assunto" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Mensagem:</label><br>
+            <textarea id="message" name="mensagem" rows="4" required></textarea><br>
+            <p><button class="btn" id="enviar-email">Enviar</button></p>
+          </div>
+
+
+        </form>
+      </div>
+
+      <div class="apoio">
+        <!--ADICIONAR LINK OU IMAGEM-->
+        <h2>APOIO VIA PIX</h2>
+        <img src="/flask/static/images/meupix.jpg" width="50%">
+      </div>
+
+    </section>
+ 
+  <footer>
+    <a href="#"><button class="button" style="vertical-align:middle"><span><strong>Topo da
+            Página</strong></span></button></a>
+    <a
+      href="https://www.instagram.com/coletivo_arteracao?igsh=cGw5bXR1ZTIzeTU4" target="_blank"><button class="button" style="vertical-align:middle"><span><strong>Visite o
+            Instagram</strong></span></button></a>
+    <a href="https://www.youtube.com/@coletivoarteracao3961/featured" target="_blank"><button class="button" style="vertical-align:middle"><span><strong>Visite o
+            Youtube</strong></span></button></a>
+    <a href="cadastro.html"><button class="button" style="vertical-align:middle"><span><strong>Se
+            Cadastre</strong></span></button></a>
+    <div class="container">
+      <p>&copy; 2024 Coletivo ArterAção. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+  
+</body>
+
+</html>
