@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ArterAçãoConnect - Noticía 1</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="shortcut icon" href="/flask/static/images/coletivo.png">
+</head>
+
+
+
+<!-- https://www.navedoconhecimento.rio  NOSSA REFERÊNCIA -->
+
+
+
+<body>
+  <header>
+    <div class="container">
+      <center>
+        <h1><a href="{{ url_for('index') }}" class="branco">ArterAçãoConnect</a></h1>
+      </center>
+      <nav>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle"/>
+        <label for="menu-toggle" id="responsive-button">
+            <img src="{{ url_for('static', filename='images/icone transparente.png') }}" width="20px" height="20px" alt="Menu">
+        </label>
+        <ul class="menu">
+          <li><a href="{{ url_for('index') }}">HOME</a></li> |
+          <li><a href="{{ url_for('index') }}">NOTÍCIAS</a></li> |
+          <li><a href="{{ url_for('index') }}">EVENTOS</a></li> |
+          <li><a href="{{ url_for('index') }}">CONTATO E APOIO</a></li> |
+          <li><a href="{{ url_for('cadastro') }}">CADASTRE-SE</a></li> |
+          <li><a href="{{ url_for('adm') }}">ADMINISTRAÇÃO</a></li>
+        </ul>
+      </nav>    
+  </header>
+  <section class="container sobre" id="about">
+    <div class="ericksoares">
+      <img src="/static/images/grande sertao.jpg" alt="grande sertao"><br>&copy;Grande Sertão (2024) dirigido por Guel Arraes
+    </div>
+    <div class="container">
+      <h2>Grande Sertão</h2>
+      <p>No dia 05/06 fomos convidados pela @monicanegaoficial para assistir a pré-estreia do filme “Grande Sertão”, a experiência foi INCRÍVEL, tivemos a oportunidade de assistir este filme espetacular!! 🎥🍿
+      </p>
+
+      <p>Grande Sertão é um futuro filme brasileiro, dirigido por Guel Arraes e com roteiro dele e Jorge Furtado, baseado no romance Grande Sertão: Veredas, de Guimarães Rosa. Produzido pela Paranoïd Filmes em coprodução com a Globo Filmes e distribuído pela Paris Filmes, será protagonizado por Caio Blat e Luisa Arraes. O filme tem previsão de estreia nos cinemas para 6 de junho de 2024.
+      EA estreia mundial do filme se deu no Critic’s Pick Tallinn Black Nights Film Festival (PÖFF), na Estônia, ocasião na qual Arraes conquistou o prêmio de melhor diretor, em novembro de 2023.</p>
+      <p><strong><a href="https://www.instagram.com/reel/C77aOvZPJqH/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank">CLIQUE AQUI PARA O LINK</a></strong></p>
+
+      <p>Caio Blat como Riobaldo</p>
+      <p>Luisa Arraes como Diadorim</p>
+      <p>Rodrigo Lombardi como Joca Ramiro</p>
+      <p>Eduardo Sterblitch como Hermógenes</p>
+      <p>Luís Miranda como Zé Bebelo</p>
+      <p>Mariana Nunes como Otacília</p>
+      <p>Luellem de Castro como Nhorinhá</p>
+    </div>
+  </section>
+  <footer>
+    <a href="#"><button class="button" style="vertical-align:middle"><span><strong>Topo da
+            Página</strong></span></button></a>
+    <a
+      href="https://www.instagram.com/coletivo_arteracao?igsh=cGw5bXR1ZTIzeTU4" target="_blank"><button class="button" style="vertical-align:middle"><span><strong>Visite o
+            Instagram</strong></span></button></a>
+    <a href="https://www.youtube.com/@coletivoarteracao3961/featured" target="_blank"><button class="button" style="vertical-align:middle"><span><strong>Visite o
+            Youtube</strong></span></button></a>
+    <div class="container">
+      <p>&copy; 2024 Coletivo ArterAção. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
+</html>

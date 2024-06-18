@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ArterAçãoConnect</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="shortcut icon" href="/flask/static/images/coletivo.png">
+</head>
+
+
+
+<!-- https://www.navedoconhecimento.rio  NOSSA REFERÊNCIA -->
+
+
+
+<body>
+  <header>
+    <div class="container">
+      <center>
+        <h1><a href="{{ url_for('index') }}" class="branco">ArterAçãoConnect</a></h1>
+      </center>
+      <nav>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle"/>
+        <label for="menu-toggle" id="responsive-button">
+            <img src="{{ url_for('static', filename='images/icone transparente.png') }}" width="20px" height="20px" alt="Menu">
+        </label>
+        <ul class="menu">
+          <li><a href="{{ url_for('index') }}">HOME</a></li> |
+          <li><a href="{{ url_for('index') }}">NOTÍCIAS</a></li> |
+          <li><a href="{{ url_for('index') }}">EVENTOS</a></li> |
+          <li><a href="{{ url_for('index') }}">CONTATO E APOIO</a></li> |
+          <li><a href="{{ url_for('cadastro') }}">CADASTRE-SE</a></li> |
+          <li><a href="{{ url_for('adm') }}">ADMINISTRAÇÃO</a></li>
+        </ul>
+      </nav>    
+  </header>
+  <center>
+    <h2>Eventos Recentes</h2>
+
+    <fieldset class="field">
+      <div class="cards2">
+
+        <div class="card2" class="evento1">
+          <!-- <img src="" class="eventocomnada" alt="obraº1"> -->
+          <h3>Coletivo ArterAção na WebsummitRio📲 - 18/04/2024</h3>
+          <p>Erick Soares esteve no painel como speaker do 💙@websummitrio na mesa da @unicefbrasil💙 tratando de
+            discussões acerca das emergências climáticas.🚀</p>
+          <a href="{{ url_for('evento1') }}" class="btn" class="reduz">Saiba Mais</a>
+        </div>
+
+        <div class="card2" class="evento2">
+          <!-- <img src="" class="eventocomnada" alt="obraº2"> -->
+          <h3>Oficina de Teatro, Dança e Fotografia🎭 - 13/06/24</h3>
+          <p>Estão abertas as inscrições das aulas de teatro, dança e fotografia gratuitas para crianças, adolescentes e
+            jovens (jovens de todas as idades 😎).🎭</p>
+          <a href="{{ url_for('evento2') }}" class="btn" class="reduz">Saiba Mais</a>
+        </div>
+
+
+        <div class="card2" class="evento3">
+          <!-- <img src="" class="eventocomnada" alt="obraº3"> -->
+          <h3>(Evento nº3)📲</h3>
+          <p>Descrição do Evento nº3🚀</p>
+          <a href="evento3.html" class="btn" class="reduz">Saiba Mais</a>
+        </div>
+
+        <div class="card2" class="evento4">
+          <!-- <img src="" class="eventocomnada" alt="obraº4"> -->
+          <h3>(Evento nº4)🎭</h3>
+          <p>Descrição do Evento nº4🎭</p>
+          <a href="evento4.html" class="btn" class="reduz">Saiba Mais</a>
+        </div>
+
+      </div>
+
+
+    </fieldset>
+  </center>
+  <footer>
+    <a href="#"><button class="button" style="vertical-align:middle"><span><strong>Topo da
+            Página</strong></span></button></a>
+    <a
+      href="https://www.instagram.com/coletivo_arteracao?igsh=cGw5bXR1ZTIzeTU4" target="_blank"><button class="button" style="vertical-align:middle"><span><strong>Visite o
+            Instagram</strong></span></button></a>
+    <a href="https://www.youtube.com/@coletivoarteracao3961/featured" target="_blank"><button class="button" style="vertical-align:middle"><span><strong>Visite o
+            Youtube</strong></span></button></a>
+
+    <div class="container">
+      <p>&copy; 2024 Coletivo ArterAção. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+
+
+</body>
+
+</html>
