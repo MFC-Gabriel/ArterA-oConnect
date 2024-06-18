@@ -15,6 +15,8 @@ DB_NAME = 'railway'
 def index():
     return render_template('index.html')
 
+
+
 @app.route('/adm')
 def adm():
     return render_template('adm.html')
