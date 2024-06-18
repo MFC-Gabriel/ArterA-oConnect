@@ -1,8 +1,8 @@
-from flask import Flask, redirect, request, render_template, url_for, flash
+from flask import Flask, request, render_template, url_for, redirect
 import psycopg2
+from psycopg2 import sql
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'  # Necessário para usar flash messages
 
 # Configurações do banco de dados
 DB_HOST = 'viaduct.proxy.rlwy.net'
@@ -11,7 +11,7 @@ DB_USER = 'postgres'
 DB_PASSWORD = 'giUBHopOxjPBoyFiKrleHbNGGXCUPDga'
 DB_NAME = 'railway'
 
-@app.route('/index')
+@app.route('/')
 def index():
     return render_template('index.html')
 
@@ -21,7 +21,7 @@ def adm():
 
 @app.route('/noticia1')
 def noticia1():
-    return render_template('notica1.html')
+    return render_template('noticia1.html')
 
 @app.route('/noticia2')
 def noticia2():
@@ -39,87 +39,133 @@ def evento2():
 def vereventos():
     return render_template('vereventos.html')
 
-@app.route('/cadastro')
+@app.route('/controlebanco')
+def controlebanco():
+    return render_template('controlebanco.html')
+
+
+@app.route('/admin_login', methods=['POST'])
+def admin_login():
+    login = request.form['admin-login']
+    password = request.form['admin-password']
+    
+    # Verifique as credenciais
+    correct_login = 'adm'
+    correct_password = 'senha123'
+    
+    if login == correct_login and password == correct_password:
+        return redirect(url_for('controlebanco'))
+    else:
+        return redirect(url_for('adm'))
+    
+@app.route('/cadastro', methods=['GET', 'POST'])
 def cadastro():
+    if request.method == 'POST':
+        # Obtém informações do formulário enviado pelo formulário
+        email = request.form['registerEmail']
+        cpf = request.form['registerCpf']
+        name = request.form['registerName']
+        tell = request.form['registerTell']
+        gender = request.form['registerGender']
+        idade = request.form['idade']
+        nameresp = request.form['registerNameResp']
+        cpfresp = request.form['registerCpfResp']
+        tellresp = request.form['registerTellResp']
+        emailresp = request.form['registerEmailResp']
+        genderresp = request.form['registerGenderResp']
+       
+        # Verifica se todos os campos obrigatórios estão preenchidos quando menor de idade
+        
+
+        # Conecta ao banco de dados PostgreSQL
+        connection = psycopg2.connect(host=DB_HOST,
+                                      port=DB_PORT,
+                                      user=DB_USER,
+                                      password=DB_PASSWORD,
+                                      database=DB_NAME)
+        cursor = connection.cursor()
+
+        try:
+            # Insere os dados na tabela oficial
+            query = sql.SQL("INSERT INTO oficial (cpf, name, tell, gender, email, idade, nameresp, cpfresp, tellresp, emailresp) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)")
+            cursor.execute(query, (cpf, name, tell, gender, email, idade, nameresp, cpfresp, tellresp, emailresp))
+
+            connection.commit()
+            return "Cadastro realizado com sucesso!"
+        
+        except psycopg2.Error as e:
+            # Em caso de erro, faz rollback e exibe uma mensagem de erro
+            connection.rollback()
+            return "Ocorreu um erro ao cadastrar: " + str(e)
+        
+        finally:
+            # Fecha a conexão com o banco de dados
+            cursor.close()
+            connection.close()
+
+    # Se o método for GET, renderiza o formulário de cadastro
     return render_template('cadastro.html')
-
-@app.route('/cadastro', methods=['POST'])
-def cadastro_post():
-    email = request.form['registerEmail']
-    cpf = request.form['registerCpf']
-    name = request.form['registerName']
-    tell = request.form['registerTell']
-    gender = request.form['registerGender']
-    idade = request.form['idade']
-    nameresp = request.form['registerNameResp']
-    cpfresp = request.form['registerCpfResp']
-    tellresp = request.form['registerTellResp']
-    emailresp = request.form['registerEmailResp']
-    genderresp = request.form['registerGenderResp']
-
-    if idade == "Menor" and (nameresp == "" or cpfresp == "" or tellresp == "" or emailresp == ""):
-        flash("Existem campos obrigatórios incompletos", "error")
-        return redirect(url_for('cadastro'))
-
-    connection = psycopg2.connect(host=DB_HOST, port=DB_PORT, user=DB_USER, password=DB_PASSWORD, database=DB_NAME)
-    cursor = connection.cursor()
-
-    try:
-        query = "INSERT INTO oficial (cpf, name, tell, gender, email, idade, nameresp, cpfresp, tellresp, emailresp) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
-        cursor.execute(query, (cpf, name, tell, gender, email, idade, nameresp, cpfresp, tellresp, emailresp))
-        connection.commit()
-        flash("Cadastro realizado com sucesso!", "success")
-    except Exception as e:
-        connection.rollback()
-        flash("Ocorreu um erro ao cadastrar: " + str(e), "error")
-    finally:
-        cursor.close()
-        connection.close()
-
-    return redirect(url_for('index'))
 
 @app.route('/remocao', methods=['POST'])
 def remocao():
+    # Obtém informações do formulário enviado pelo formulário
     cpf = request.form['excludeCpf']
-
-    connection = psycopg2.connect(host=DB_HOST, port=DB_PORT, user=DB_USER, password=DB_PASSWORD, database=DB_NAME)
+   
+    # Conecta ao banco de dados PostgreSQL
+    connection = psycopg2.connect(host=DB_HOST,
+                                  port=DB_PORT,
+                                  user=DB_USER,
+                                  password=DB_PASSWORD,
+                                  database=DB_NAME)
     cursor = connection.cursor()
 
     try:
-        query = "DELETE FROM oficial WHERE cpf = %s"
+        # Remove o cliente da tabela oficial
+        query = sql.SQL("DELETE FROM oficial WHERE cpf = %s")
         cursor.execute(query, (cpf,))
         connection.commit()
-        flash("Cliente removido com sucesso!", "success")
-    except Exception as e:
+        return "Cliente removido com sucesso!"
+    
+    except psycopg2.Error as e:
+        # Em caso de erro, faz rollback e exibe uma mensagem de erro
         connection.rollback()
-        flash("Ocorreu um erro ao remover: " + str(e), "error")
+        return "Ocorreu um erro ao remover o cliente: " + str(e)
+    
     finally:
+        # Fecha a conexão com o banco de dados
         cursor.close()
         connection.close()
 
-    return redirect(url_for('index'))
-
 @app.route('/verificar', methods=['POST'])
 def verificar():
+    # Obtém informações do formulário enviado
     cpf = request.form['verificarCpf']
-
-    connection = psycopg2.connect(host=DB_HOST, port=DB_PORT, user=DB_USER, password=DB_PASSWORD, database=DB_NAME)
+   
+    # Conecta ao banco de dados PostgreSQL
+    connection = psycopg2.connect(host=DB_HOST,
+                                  port=DB_PORT,
+                                  user=DB_USER,
+                                  password=DB_PASSWORD,
+                                  database=DB_NAME)
     cursor = connection.cursor()
 
     try:
-        query = "SELECT name FROM oficial WHERE cpf = %s"
+        # Verifica se o cliente está na tabela oficial
+        query = sql.SQL("SELECT name FROM oficial WHERE cpf = %s")
         cursor.execute(query, (cpf,))
         result = cursor.fetchone()
         name = result[0] if result else ""
         return render_template('controlebanco.html', verificarName=name, verificarCpf=cpf)
-    except Exception as e:
+    
+    except psycopg2.Error as e:
+        # Em caso de erro, faz rollback e exibe uma mensagem de erro
         connection.rollback()
-        flash("Ocorreu um erro ao verificar cliente: " + str(e), "error")
+        return "Ocorreu um erro ao verificar o cliente: " + str(e)
+    
     finally:
+        # Fecha a conexão com o banco de dados
         cursor.close()
         connection.close()
-
-    return redirect(url_for('index'))
 
 if __name__ == '__main__':
     app.run(debug=True)

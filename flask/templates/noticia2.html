@@ -20,27 +20,26 @@
   <header>
     <div class="container">
       <center>
-        <h1><a href="index.html" class="branco">ArterAçãoConnect - Projeto CapacitArte</a></h1><br>
+        <h1><a href="{{ url_for('index') }}" class="branco">ArterAçãoConnect</a></h1>
       </center>
       <nav>
         <input type="checkbox" id="menu-toggle" class="menu-toggle"/>
         <label for="menu-toggle" id="responsive-button">
-            <img src="/flask/static/images/icone transparente.png" width="20px" height="20px" alt="Menu">
-          </label>
-        <ul  class="menu">
-          <li><a href="index.html">HOME</a></li> |
-          <li><a href="#">NOTÍCIAS</a></li> |
-          <li><a href="evento1.html">EVENTOS</a></li> |
-          <li><a href="index.html">CONTATO E APOIO</a></li> |
-          <li><a href="cadastro.html">CADASTRE-SE</a></li> |
-          <li><a href="adm.html">ADMINISTRAÇÃO</a></li>
+            <img src="{{ url_for('static', filename='images/icone transparente.png') }}" width="20px" height="20px" alt="Menu">
+        </label>
+        <ul class="menu">
+          <li><a href="{{ url_for('index') }}">HOME</a></li> |
+          <li><a href="#news">NOTÍCIAS</a></li> |
+          <li><a href="#events">EVENTOS</a></li> |
+          <li><a href="#contact">CONTATO E APOIO</a></li> |
+          <li><a href="{{ url_for('cadastro') }}">CADASTRE-SE</a></li> |
+          <li><a href="{{ url_for('adm') }}">ADMINISTRAÇÃO</a></li>
         </ul>
-      </nav>
-    </div>
+      </nav>    
   </header>
   <section class="container sobre" id="about">
     <div class="ericksoares">
-      <img src="/flask/static/images/CapaciArte.jpeg" alt="CapaciArte"><br>&copy;Projeto CapacitArte 08/06/2024
+      <img src="/static/images/CapaciArte.jpeg" alt="CapaciArte"><br>&copy;Projeto CapacitArte 08/06/2024
     </div>
     <div class="container">
       <h2>Projeto CapacitArte</h2>
@@ -58,8 +57,6 @@
             Instagram</strong></span></button></a>
     <a href="https://www.youtube.com/@coletivoarteracao3961/featured" target="_blank"><button class="button" style="vertical-align:middle"><span><strong>Visite o
             Youtube</strong></span></button></a>
-    <a href="cadastro.html"><button class="button" style="vertical-align:middle"><span><strong>Se
-            Cadastre</strong></span></button></a>
     <div class="container">
       <p>&copy; 2024 Coletivo ArterAção. Todos os direitos reservados.</p>
     </div>

@@ -10,29 +10,36 @@
   
 </head>
 <body>
-  <header>
-    <div class="container">
-      <center>
-        <h1><a href="index.html" class="branco">ArterAçãoConnect - Controle de Dados</a></h1><br>
-      </center>
-      <nav>
-        <input type="checkbox" id="menu-toggle" class="menu-toggle"/>
-        <label for="menu-toggle" id="responsive-button">
-          <img src="images/icone transparente.png" width="20px" height="20px" alt="Menu">
-        </label>
-        <ul class="menu">
-          <li><a href="index.html">HOME</a></li> |
-          <li><a href="index.html#news">NOTÍCIAS</a></li> |
-          <li><a href="index.html#events">EVENTOS</a></li> |
-          <li><a href="index.html#contact">CONTATO E APOIO</a></li> |
-          <li><a href="cadastro.html">CADASTRE-SE</a></li> |
-          <li><a href="adm.html">ADMINISTRAÇÃO</a></li>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul>
+          {% for category, message in messages %}
+            <li class="{{ category }}">{{ message }}</li>
+          {% endfor %}
         </ul>
-      </nav>
-    </div>
-  </header>
+      {% endif %}
+    {% endwith %}
+    <header>
+      <div class="container">
+        <center>
+          <h1><a href="{{ url_for('index') }}" class="branco">ArterAçãoConnect</a></h1>
+        </center>
+        <nav>
+          <input type="checkbox" id="menu-toggle" class="menu-toggle"/>
+          <label for="menu-toggle" id="responsive-button">
+              <img src="{{ url_for('static', filename='images/icone transparente.png') }}" width="20px" height="20px" alt="Menu">
+          </label>
+          <ul class="menu">
+            <li><a href="{{ url_for('index') }}">HOME</a></li> |
+            <li><a href="#news">NOTÍCIAS</a></li> |
+            <li><a href="#events">EVENTOS</a></li> |
+            <li><a href="#contact">CONTATO E APOIO</a></li> |
+            <li><a href="{{ url_for('adm') }}">ADMINISTRAÇÃO</a></li>
+          </ul>
+        </nav>    
+    </header>
   <section id="register" class="section-padding">
-    <a href="adm.html" class="btn">Sair / Voltar</a>
+    <a href="{{ url_for('index') }}" class="btn">Sair / Voltar</a>
     <div class="container">
       <h2>Cadastre-se</h2>
       <p>Todos os campos marcados com * são obrigatórios.<br>Por favor, preencher a área do Responsável, apenas se Menor de Idade.<br>Ao se cadastrar, você facilita a comunicação direta do Coletivo com você para notificações sobre eventos e notícias futuras.</p>
@@ -123,7 +130,6 @@
     <a href="#"><button class="button" style="vertical-align:middle"><span><strong>Topo da Página</strong></span></button></a>
     <a href="https://www.instagram.com/coletivo_arteracao?igsh=cGw5bXR1ZTIzeTU4" target="_blank"><button class="button" style="vertical-align:middle"><span><strong>Visite o Instagram</strong></span></button></a>
     <a href="https://www.youtube.com/@coletivoarteracao3961/featured" target="_blank"><button class="button" style="vertical-align:middle"><span><strong>Visite o Youtube</strong></span></button></a>
-    <a href="cadastro.html"><button class="button" style="vertical-align:middle"><span><strong>Se Cadastre</strong></span></button></a>
     <div class="container">
       <p>&copy; 2024 Coletivo ArterAção. Todos os direitos reservados.</p>
     </div>

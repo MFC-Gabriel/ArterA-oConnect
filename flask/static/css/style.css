@@ -1,6 +1,6 @@
 /* HERO SECTION */
 .bg-1 {
-    background-image: url(/flask/static/images/coletivooo.jpg);
+    background-image: url(/static/images/coletivooo.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -14,7 +14,7 @@
   }
   
   .bg-2 {
-    background-image: url(/flask/static/images/campofutebol.jpg);
+    background-image: url(/static/images/campofutebol.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

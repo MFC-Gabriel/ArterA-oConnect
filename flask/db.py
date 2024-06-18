@@ -8,8 +8,6 @@ def get_db_connection():
         database='railway',
         port='46527'
     )
-
-
     
 def add_client(data):
     connection = get_db_connection()

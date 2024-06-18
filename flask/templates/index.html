@@ -6,45 +6,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ArterAçãoConnect</title>
 
-  <!-- pra mandar o E-mail -->
+  <!-- Scripts e links -->
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script>
     (function () {
       emailjs.init("evzMf4r2BDwzicO");
     })();
   </script>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-  <!-- EMAIL -->
-
-
-  <!-- slider -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-
-
   <script>
     $(document).ready(function () {
-
       $(".slider").bxSlider({
-
         auto: true,
         pause: 5000,
         controls: false,
         speed: 2000,
         mode: 'horizontal',
         infiniteLoop: true
-
       });
-
     });
   </script>
-<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
-
-  <!-- slider -->
-  <link rel="shortcut icon" href="/flask/static/images/coletivo.png">
+  <!-- Estilos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='images/coletivo.png') }}">
 </head>
 
 
@@ -54,24 +42,24 @@
 
 
 <body>
+  
   <header>
     <div class="container">
       <center>
-        <h1><a href="index.html" class="branco">ArterAçãoConnect</a></h1><br>
-      </div>
+        <h1><a href="{{ url_for('index') }}" class="branco">ArterAçãoConnect</a></h1>
       </center>
-      <nav>a
+      <nav>
         <input type="checkbox" id="menu-toggle" class="menu-toggle"/>
         <label for="menu-toggle" id="responsive-button">
             <img src="{{ url_for('static', filename='images/icone transparente.png') }}" width="20px" height="20px" alt="Menu">
         </label>
         <ul class="menu">
-          <li><a href="{{ url_for('index.html') }}">HOME</a></li> |
+          <li><a href="{{ url_for('index') }}">HOME</a></li> |
           <li><a href="#news">NOTÍCIAS</a></li> |
           <li><a href="#events">EVENTOS</a></li> |
           <li><a href="#contact">CONTATO E APOIO</a></li> |
-          <li><a href="{{ url_for('cadastro.html') }}">CADASTRE-SE</a></li> |
-          <li><a href="{{ url_for('adm.html') }}">ADMINISTRAÇÃO</a></li>
+          <li><a href="{{ url_for('cadastro') }}">CADASTRE-SE</a></li> |
+          <li><a href="{{ url_for('adm') }}">ADMINISTRAÇÃO</a></li>
         </ul>
       </nav>    
   </header>
@@ -101,21 +89,12 @@
 
     </section>
   </div>
-  <!--<section id="home">
-    <center>
-     <div class="carousel">
-        <img src="images/grupoarteracao.png" alt="Imagem 1">
-        <img src="images/coletivo.png" alt="Imagem 2">
-        <img src="images/coletivo.png" alt="Imagem 3">
-      </div>
-     </center> 
-  </section>-->
-  <!-- Outras seções continuam como estão -->
+
   <section class="container sobre" id="about">
     <div class="ericksoares">
-      <img src="/flask/static/images/erick soares.png" alt="erick soares"><br>&copy;UNICEF Brasil - Erick Soares foi nomeado jovem
+      <img src="/static/images/erick soares.png" alt="erick soares"><br>&copy;UNICEF Brasil - Erick Soares foi nomeado jovem
       ativista do UNICEF pelo representante<br> do UNICEF no Brasil, Youssouf Abdel-Jelil, no dia 20 de novembro de
-      2023, em cerimônia<br> no escritório do UNICEF em Brasília.<br><img src="/flask/static/images/erick.jpg" width="25%" alt="erick"><br>✊🏽 Periferia ativa
+      2023, em cerimônia<br> no escritório do UNICEF em Brasília.<br><img src="/static/images/erick.jpg" width="25%" alt="erick"><br>✊🏽 Periferia ativa
     </div>
     <div class="container">
       <h2>SOBRE O COLETIVO</h2>
@@ -160,13 +139,13 @@
           <h3>Grande Sertão🎥</h3>
           <p>No dia 05/06 fomos convidados pela @monicanegaoficial para assistir a pré-estreia do filme “Grande Sertão”,
             Venha ver como foi assistir este filme espetacular!!🎥🍿</p>
-          <a href="noticia1.html" class="btn">Leia Mais</a>
+          <a href="{{ url_for('noticia1') }}" class="btn">Leia Mais</a>
         </div>
         <div class="card">
           <h3>CapacitArte🎨</h3>
           <p>No dia 08/06 inauguramos o projeto CapacitArte, onde podemos nos conhecer, conhecer as vivências de cada
             um.. Foi um dia lindo de emoções, trocas, alegria… 🎨👏🏼</p>
-          <a href="noticia2.html" class="btn">Leia Mais</a>
+          <a href="{{ url_for('noticia2') }}" class="btn">Leia Mais</a> 
         </div>
       </div>
     </div>
@@ -179,44 +158,20 @@
           <h3>Oficina de Teatro, Dança e Fotografia🎭</h3>
           <p>Estão abertas as inscrições das aulas de teatro, dança e fotografia gratuitas para crianças, adolescentes e
             jovens (jovens de todas as idades 😎).🎭</p>
-          <a href="evento1.html" class="btn">Saiba Mais</a>
+          <a href="{{ url_for('evento1') }}" class="btn">Saiba Mais</a>
         </div>
         <div class="card">
           <h3>Coletivo ArterAção na WebsummitRio📲</h3>
           <p>Erick Soares esteve no painel como speaker do 💙@websummitrio na mesa da @unicefbrasil💙 tratando de
             discussões acerca das emergências climáticas.🚀</p>
-          <a href="evento2.html" class="btn">Saiba Mais</a>
+          <a href="{{ url_for('evento2') }}" class="btn">Saiba Mais</a>
         </div>
       </div>
     </div>
   </section>
   <div class="rightdiv">
-  <a href="vereventos.html" class="btn2">Ver Eventos</a>
-  </div>    
-  <!-- <section id="library" class="section-padding">
-    <div class="container">
-      <h2>Biblioteca de Obras</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Coletivo ArterAção na WebsummitRio📲</h3>
-          <p>Erick Soares esteve no painel como speaker do 💙@websummitrio na mesa da @unicefbrasil💙 tratando de
-            discussões acerca das emergências climáticas.🚀</p>
-          <a href="obra2.html" class="btn">Saiba Mais</a>
-        </div>
-        <div class="card">
-          <h3>(Obra publicada nº1)📲</h3>
-          <p>Descrição da Obra nº1</p>
-          <a href="obra1.html" class="btn">Saiba Mais</a>
-        </div>
-      </div>
-      <div class="jogardireita" style="width: 110px;">
-        <a href="verobras.html" class="btn">Ver Obras</a>
-      </div>
-    </div>
-  </section> -->
-
-
-  
+  <a href="{{ url_for('vereventos') }}" class="btn2">Ver Eventos</a>
+  </div>      
     <section id="contact">
       <div class="contato">
         <h2>
@@ -248,7 +203,7 @@
       <div class="apoio">
         <!--ADICIONAR LINK OU IMAGEM-->
         <h2>APOIO VIA PIX</h2>
-        <img src="/flask/static/images/meupix.jpg" width="50%">
+        <img src="/static/images/meupix.jpg" width="50%">
       </div>
 
     </section>
@@ -261,13 +216,12 @@
             Instagram</strong></span></button></a>
     <a href="https://www.youtube.com/@coletivoarteracao3961/featured" target="_blank"><button class="button" style="vertical-align:middle"><span><strong>Visite o
             Youtube</strong></span></button></a>
-    <a href="cadastro.html"><button class="button" style="vertical-align:middle"><span><strong>Se
-            Cadastre</strong></span></button></a>
+  
     <div class="container">
       <p>&copy; 2024 Coletivo ArterAção. Todos os direitos reservados.</p>
     </div>
   </footer>
-  <script src="script.js"></script>
+  <script src="static/js/script.js"></script>
   
 </body>
 
